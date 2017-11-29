@@ -3,12 +3,13 @@ package com.co.ejb.servicio;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-
-import com.co.dao.IDaoActivo;
+ 
+import com.co.dao.imp.DaoActivo;
 import com.co.modelo.Inmueble;
 import com.co.restrespuesta.JsonInmuebleString;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Session Bean implementation class InmuebleEJB
@@ -16,7 +17,7 @@ import com.co.restrespuesta.JsonInmuebleString;
 @Stateless
 public class InmuebleEJB implements InmuebleEJBLocal {
  
-	private IDaoActivo daoActivo;
+	private DaoActivo daoActivo;
 
 	/**
 	 * Default constructor.
@@ -33,10 +34,27 @@ public class InmuebleEJB implements InmuebleEJBLocal {
 		try {
 			listaInmueble = daoActivo.listaActivosGeneral();
 		} catch (Exception e) {
-
 		}
-
 		return listaJsonInmuebleString;
+	}
+	
+	public String guardarActivo(Inmueble inmu) {
+		String respuesta = "va en el servicio de la logica";
+
+		boolean valor = false;
+		// valor = crearEmpleado(empleado);
+
+		if (!valor) {
+			ObjectMapper mapper = new ObjectMapper();
+			try {
+				respuesta = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(inmu);
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+		} else {
+			respuesta = "Error";
+		}
+		return respuesta+ ": exito";
 	}
 
 }

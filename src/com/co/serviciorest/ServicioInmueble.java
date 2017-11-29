@@ -10,12 +10,12 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import com.co.ejb.servicio.InmuebleEJB;
 import com.co.ejb.servicio.InmuebleEJBLocal;
 import com.co.restrespuesta.JsonInmuebleString;
 import com.co.modelo.Estadoinmueble;
 import com.co.modelo.Inmueble;
 import com.co.modelo.Tipoinmueble;
-import com.co.servicio.ServicioActivo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RequestScoped
@@ -25,7 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class ServicioInmueble {
 
 	@EJB
-	InmuebleEJBLocal inmuebleEJB;
+	private InmuebleEJBLocal inmuebleEJB;
 
 	@POST
 	@Path("/crearinmueble")
@@ -74,7 +74,7 @@ public class ServicioInmueble {
 				throw new Exception("Color null o vacio");
 			}
 			 		
-			/*int id=Integer.parseInt(inmuebleString.getNumeroInternoI());
+			int id=Integer.parseInt(inmuebleString.getNumeroInternoI());
 			float peso= Float.parseFloat(inmuebleString.getPesoInmueble());
 			float alto= Float.parseFloat(inmuebleString.getAltoInmueble());
 			float ancho= Float.parseFloat(inmuebleString.getAnchoInmueble());
@@ -87,9 +87,9 @@ public class ServicioInmueble {
 			Inmueble inmueble = new Inmueble(id,inmuebleString.getSerialInmueble(),inmuebleString.getNombreInmueble(),
 					inmuebleString.getDescripcionI(),peso,alto,ancho,largo, inmuebleString.getColorInmueble(),
 					tipo,estado);
-			*/
-			ServicioInmueble servicioInmueble = new ServicioInmueble();
-			//respuesta = servicioEmpleado.guardarEmpleado(inmueble);
+			
+			InmuebleEJB inmuebleEJB = new InmuebleEJB();
+			respuesta = inmuebleEJB.guardarActivo(inmueble);
 
 		} catch (Exception e) {
 			respuesta = e.getMessage();

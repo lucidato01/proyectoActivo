@@ -77,8 +77,7 @@ public class Inmueble implements Serializable {
 
 	public Inmueble(Integer numeroInternoI, String serialInmueble, String nombreInmueble, String descripcionI,
 			float pesoInmueble, float altoInmueble, float anchoInmueble, float largoInmueble, String colorInmueble,
-			  Tipoinmueble idTipo,
-			Estadoinmueble idEstadoInmueble) {
+			  Tipoinmueble idTipo,Estadoinmueble idEstadoInmueble) {
 		super();
 		this.numeroInternoI = numeroInternoI;
 		this.serialInmueble = serialInmueble;
