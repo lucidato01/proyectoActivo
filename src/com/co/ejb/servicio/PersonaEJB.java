@@ -26,6 +26,11 @@ public class PersonaEJB implements PersonaEJBLocal {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * metodo para lsitar personas
+	 * 
+	 * @return list
+	 **/
 	@Override
 	public List<Persona> listPersonaGeneral() {
 		System.out.println("entro al ejb");

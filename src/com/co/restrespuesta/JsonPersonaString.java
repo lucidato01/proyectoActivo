@@ -1,10 +1,24 @@
 package com.co.restrespuesta;
 
+/**
+ *
+ * @author Fabian
+ */
 public class JsonPersonaString {
 
 	private String cedulaPersona;
 	private String nombresPersona;
 
+	/**
+	 * Constructor por defecto
+	 */
+	public JsonPersonaString() {
+
+	}
+
+	/**
+	 * Constructor para inicializar atributos
+	 */
 	public JsonPersonaString(String cedulaPersona, String nombresPersona) {
 		super();
 		this.cedulaPersona = cedulaPersona;

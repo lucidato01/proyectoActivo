@@ -1,17 +1,28 @@
 package com.co.restrespuesta;
 
+/**
+ *
+ * @author Fabian
+ */
 public class JsonDatosCompraString {
-	
+
 	private String idDC;
-	private String numeroInternoI; 
-	private String valorCompra; 
-	private String fechaCompra; 
+	private String numeroInternoI;
+	private String valorCompra;
+	private String fechaCompra;
 	private String fechaDebaja;
-	
+
+	/**
+	 * 
+	 * constructor por defecto
+	 */
 	public JsonDatosCompraString() {
-		
+
 	}
-	
+
+	/**
+	 * constructor para inicializar atributos
+	 */
 	public JsonDatosCompraString(String idDC, String numeroInternoI, String valorCompra, String fechaCompra,
 			String fechaDebaja) {
 		super();
@@ -66,7 +77,6 @@ public class JsonDatosCompraString {
 	public String toString() {
 		return "JsonDatosCompraString [idDC=" + idDC + ", numeroInternoI=" + numeroInternoI + ", valorCompra="
 				+ valorCompra + ", fechaCompra=" + fechaCompra + ", fechaDebaja=" + fechaDebaja + "]";
-	} 
-	
+	}
 
 }

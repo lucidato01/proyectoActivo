@@ -15,6 +15,10 @@ import com.co.dao.IDaoPersona;
 import com.co.modelo.Inmueble;
 import com.co.modelo.Persona;
 
+/**
+ * Clase DaoPersona
+ *@author fabian
+ **/
 public class DaoPersona implements IDaoPersona {
 
 	private Logger logger = Logger.getLogger(DaoPersona.class.getName());

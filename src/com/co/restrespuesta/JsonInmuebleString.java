@@ -1,5 +1,9 @@
 package com.co.restrespuesta;
 
+/**
+ *
+ * @author Fabian
+ */
 public class JsonInmuebleString {
 
 	private String numeroInternoI;
@@ -14,10 +18,19 @@ public class JsonInmuebleString {
 	private String largoInmueble;
 	private String colorInmueble;
 
+	/**
+	 * 
+	 * Constructor por defecto
+	 */
+	public JsonInmuebleString() {
+	}
+
+	/**
+	 * constructor para inicializar atributos
+	 */
 	public JsonInmuebleString(String numeroInternoI, String idTipo, String idEstadoInmueble, String serialInmueble,
 			String nombreInmueble, String descripcionI, String pesoInmueble, String altoInmueble, String anchoInmueble,
 			String largoInmueble, String colorInmueble) {
-		super();
 		this.numeroInternoI = numeroInternoI;
 		this.idTipo = idTipo;
 		this.idEstadoInmueble = idEstadoInmueble;

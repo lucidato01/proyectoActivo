@@ -15,10 +15,14 @@ import com.co.dao.IDaoActivo;
 import com.co.modelo.Inmueble;
 import com.co.restrespuesta.JsonInmuebleString;
 
+/**
+ * Clase DaoActivo 
+ * @author Fabian
+ */
 public class DaoActivo implements IDaoActivo {
 
 	private Logger logger = Logger.getLogger(DaoActivo.class.getName());
-	private EntityManager entityM;
+	// private EntityManager entityM;
 
 	public DaoActivo() {
 		logger.info("Inicia Dao Activo");
@@ -27,18 +31,22 @@ public class DaoActivo implements IDaoActivo {
 		// this.entityM = factory.createEntityManager();
 	}
 
+	/**
+	 * 
+	 * @return List
+	 */
 	@Override
 	public List<Inmueble> listaActivosGeneral() {
 		try {
 			List<Inmueble> listaGeneral = new ArrayList<>();
-			
+
 			/*
 			 * Session session = (Session) this.entityM.getDelegate(); Criteria criteria =
 			 * session.createCriteria(Inmueble.class); List<Inmueble> listaGeneral =
 			 * criteria.list();
 			 */
 
-			//return listaGeneral;
+			// return listaGeneral;
 
 		} catch (Exception e) {
 			//
@@ -47,4 +55,4 @@ public class DaoActivo implements IDaoActivo {
 		return null;
 	}
 
-	  }
+}
