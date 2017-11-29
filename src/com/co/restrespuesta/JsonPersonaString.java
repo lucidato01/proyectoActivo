@@ -32,5 +32,4 @@ public class JsonPersonaString {
 		return "JsonPersonaString [cedulaPersona=" + cedulaPersona + ", nombresPersona=" + nombresPersona + "]";
 	}
 
-	
 }

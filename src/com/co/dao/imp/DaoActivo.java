@@ -1,5 +1,6 @@
 package com.co.dao.imp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -12,6 +13,7 @@ import org.jboss.logging.Logger;
 
 import com.co.dao.IDaoActivo;
 import com.co.modelo.Inmueble;
+import com.co.restrespuesta.JsonInmuebleString;
 
 public class DaoActivo implements IDaoActivo {
 
@@ -20,24 +22,29 @@ public class DaoActivo implements IDaoActivo {
 
 	public DaoActivo() {
 		logger.info("Inicia Dao Activo");
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("activo");
-		this.entityM = factory.createEntityManager();
+		// EntityManagerFactory factory =
+		// Persistence.createEntityManagerFactory("activo");
+		// this.entityM = factory.createEntityManager();
 	}
 
 	@Override
 	public List<Inmueble> listaActivosGeneral() {
 		try {
-			Session session = (Session) this.entityM.getDelegate();
-			Criteria criteria = session.createCriteria(Inmueble.class);
-			List<Inmueble> listaGeneral = criteria.list();
-			return listaGeneral;
+			List<Inmueble> listaGeneral = new ArrayList<>();
+			
+			/*
+			 * Session session = (Session) this.entityM.getDelegate(); Criteria criteria =
+			 * session.createCriteria(Inmueble.class); List<Inmueble> listaGeneral =
+			 * criteria.list();
+			 */
+
+			//return listaGeneral;
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			//
 			return null;
 		}
-
-		
+		return null;
 	}
 
-}
+	  }

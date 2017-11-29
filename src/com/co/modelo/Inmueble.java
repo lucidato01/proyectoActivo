@@ -73,8 +73,13 @@ public class Inmueble implements Serializable {
 		this.numeroInternoI = numeroInternoI;
 	}
 
+	 
+
 	public Inmueble(Integer numeroInternoI, String serialInmueble, String nombreInmueble, String descripcionI,
-			float pesoInmueble, float altoInmueble, float anchoInmueble, float largoInmueble, String colorInmueble) {
+			float pesoInmueble, float altoInmueble, float anchoInmueble, float largoInmueble, String colorInmueble,
+			  Tipoinmueble idTipo,
+			Estadoinmueble idEstadoInmueble) {
+		super();
 		this.numeroInternoI = numeroInternoI;
 		this.serialInmueble = serialInmueble;
 		this.nombreInmueble = nombreInmueble;
@@ -84,6 +89,8 @@ public class Inmueble implements Serializable {
 		this.anchoInmueble = anchoInmueble;
 		this.largoInmueble = largoInmueble;
 		this.colorInmueble = colorInmueble;
+		this.idTipo = idTipo;
+		this.idEstadoInmueble = idEstadoInmueble;
 	}
 
 	public Integer getNumeroInternoI() {

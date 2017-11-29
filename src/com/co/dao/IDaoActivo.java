@@ -3,6 +3,7 @@ package com.co.dao;
 import java.util.List;
  
 import com.co.modelo.Inmueble;
+import com.co.restrespuesta.JsonInmuebleString;
 
 /**
  *Interface para realizar  las operaciones de los activos  
@@ -15,9 +16,6 @@ public interface IDaoActivo {
 	 * Metodo para listar todos los activos de la empresa
 	 * @return List<Activo> 
 	 * */
-	List<Inmueble> listaActivosGeneral(); 
-	
-	
+	List<Inmueble> listaActivosGeneral();
 	 
-
-}
+ }

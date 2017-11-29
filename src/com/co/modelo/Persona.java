@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -33,7 +34,7 @@ public class Persona implements Serializable {
     @Basic(optional = false)
     @Column(name = "nombresPersona")
     private String nombresPersona;
-    @OneToMany(mappedBy = "cedulaPersona")
+    @OneToMany(fetch =FetchType.LAZY, mappedBy = "cedulaPersona")
     private List<Asignacioninmueble> asignacioninmuebleList;
 
     public Persona() {

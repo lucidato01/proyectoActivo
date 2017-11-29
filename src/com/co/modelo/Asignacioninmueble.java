@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,12 +32,15 @@ public class Asignacioninmueble implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "idAsignacionInmueble")
 	private Integer idAsignacionInmueble;
+	
 	@JoinColumn(name = "numeroInternoI", referencedColumnName = "numeroInternoI")
 	@ManyToOne(optional = false)
 	private Inmueble numeroInternoI;
+	
 	@JoinColumn(name = "cedulaPersona", referencedColumnName = "cedulaPersona")
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Persona cedulaPersona;
+	
 	@JoinColumn(name = "idArea", referencedColumnName = "idArea")
 	@ManyToOne
 	private Area idArea;

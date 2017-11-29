@@ -1,5 +1,6 @@
 package com.co.dao.imp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -21,19 +22,26 @@ public class DaoPersona implements IDaoPersona {
 
 	public DaoPersona() {
 		logger.info("Inicia Dao Persona");
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("activo");
-		this.entityM = factory.createEntityManager();
+		//EntityManagerFactory factory = Persistence.createEntityManagerFactory("activo");
+		//this.entityM = factory.createEntityManager();
 	}
 
 	@Override
 	public List<Persona> listaPersona() {
+		List<Persona> listaGeneral =new ArrayList<>();
 		try {
-			Session session = (Session) this.entityM.getDelegate();
-			Criteria criteria = session.createCriteria(Persona.class);
-			List<Persona> listaGeneral = criteria.list();
+			System.out.println("enyro al dao");
+			//Session session = (Session) this.entityM.getDelegate();
+			//Criteria criteria = session.createCriteria(Persona.class);
+			//listaGeneral = criteria.list();
+			Persona p = new Persona("1049630999", "Pepito Perez");
+			Persona p2 = new Persona("1049630998", "Mary Mad");
+			listaGeneral.add(p);
+			listaGeneral.add(p2);
+			
 			return listaGeneral;
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 			return null;
 		}
 		
